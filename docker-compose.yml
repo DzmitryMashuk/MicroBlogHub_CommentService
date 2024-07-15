@@ -44,6 +44,14 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  redis_microbloghub_comment:
+    image: redis:alpine
+    container_name: redis_microbloghub_comment-container
+    ports:
+      - "6380:6379"
+    networks:
+      - microbloghub-network
+
 volumes:
   mysql_data:
 
